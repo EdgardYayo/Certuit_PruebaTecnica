@@ -4,9 +4,9 @@ const router = express.Router();
 
 
 
-router.post("/new/:id", generateReport);
+router.post("/new/:userId", generateReport);
 
-router.get("/:id", bringInTheReport);
+router.get("/:userId", bringInTheReport);
 
 
 

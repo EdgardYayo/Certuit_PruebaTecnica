@@ -4,6 +4,7 @@ const { createReport, getReport } = require("../services/report.services")
 const generateReport = async (req, res) => {
     try {
         const { userId } = req.params;
+        console.log(req.params);
         const { typeOfTravel,
             goRoute,
             backRoute,

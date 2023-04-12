@@ -12,7 +12,6 @@ module.exports = (sequelize) => {
         typeOfTravel: {
             type: DataTypes.ENUM("Una direccion", "Viaje Redondo"),
             allowNull: false,
-            unique: true,
         },
 
         goRoute: {
@@ -39,7 +38,6 @@ module.exports = (sequelize) => {
 
         dateOfBack: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
 
         wayOfTransportation: {

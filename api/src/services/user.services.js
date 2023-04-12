@@ -32,11 +32,15 @@ const loginUser = async (email, password) => {
     
         const loggedUser = await User.findOne({
             where: {
-                name: name,
+                email: email,
                 password: password
             }
         })
     
+        if(!loggedUser){
+            throw new Error("You aren't in our database")
+        }
+        
         return loggedUser;
     } catch (error) {
         return error.message

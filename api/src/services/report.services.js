@@ -22,11 +22,17 @@ const createReport = async (typeOfTravel, goRoute, backRoute, dateOfTravel, date
             numberOfVehicles
         })
 
-        const user = await User.findById(userId);
-        newReport.total = (gasPerTravel * numberOfVehicles) + (tollBoothsPerTravel * numberOfVehicles) + pilotPricePerTravel;
+        const user = await User.findOne({
+             where:{
+                 id: userId
+             } 
+        });
+
+        newReport.total = Math.round((gasPerTravel * numberOfVehicles) + (tollBoothsPerTravel * numberOfVehicles) + pilotPricePerTravel);
+        newReport.save()
 
         user.addReport(newReport);
-        return newReport
+        return newReport;
     } catch (error) {
         throw new Error(error);
     }
@@ -35,8 +41,9 @@ const createReport = async (typeOfTravel, goRoute, backRoute, dateOfTravel, date
 
 const getReport = async (userId) => {
     try {
-        const userReport = await User.findById(userId, {
-            include:{
+        const userReport = await User.findOne({ where: {
+            id: userId
+        }, include:{
                 model: Report,
                 attributes: [ 
                 "typeOfTravel",
