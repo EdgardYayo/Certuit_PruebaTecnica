@@ -3,7 +3,8 @@ const { User } = require('../db')
 
 // Funcion que crea el usuario
 const createUser = async (username, name, email, password) => {
-
+    
+   try {
     if(!username || !name || !email || !password) {
         throw new Error("All the fields are required");
     }
@@ -14,26 +15,33 @@ const createUser = async (username, name, email, password) => {
         email,
         password
     })
-
+    console.log(User)
     return newUser;
+   } catch (error) {
+    return error.message
+   }
 }
 
 
 // Funcion que logea al usuario y le permite ingresar ala aplicacion
 const loginUser = async (email, password) => {
-
-    if(!email || !password){
-        throw new Error("All the fields are required")
-    }
-
-    const loggedUser = await User.findOne({
-        where: {
-            name: name,
-            password: password
+    try {
+        if(!email || !password){
+            throw new Error("All the fields are required")
         }
-    })
-
-    return loggedUser;
+    
+        const loggedUser = await User.findOne({
+            where: {
+                name: name,
+                password: password
+            }
+        })
+    
+        return loggedUser;
+    } catch (error) {
+        return error.message
+    }
+ 
 }
 
 module.exports = {
