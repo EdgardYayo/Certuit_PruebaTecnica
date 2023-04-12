@@ -35,13 +35,30 @@ module.exports = (sequelize) => {
         dateOfTravel: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
         },
 
         dateOfBack: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
+        },
+
+        wayOfTransportation: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+
+        numberOfPassengers: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+
+        numberOfVehicles: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+
+        total: {
+            type:DataTypes.INTEGER,
         }
     },
     {
