@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import style from "./Login.module.css";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../../redux/actions';
 
 function Login() {
 
   const dispatch = useDispatch();
+  const userData = useSelector((state) => state.user);
+  console.log(userData);
   const nav = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -40,8 +42,7 @@ function Login() {
             theme: "dark",
             });
        } else {
-         dispatch(loginUser(formData));
-         nav("/home")
+        dispatch(loginUser(formData));            
        }
   }
 
@@ -57,6 +58,7 @@ function Login() {
         <input type="password" name="password" id="password" value={formData.password} onChange={handleInputChange}/>
       </div>
       <button type="submit">Iniciar Sesión</button>
+      { !Array.isArray(userData) && <button onClick={() => nav("/home")}>Entra ala App</button> }
       <ToastContainer/> 
     </form>
   );

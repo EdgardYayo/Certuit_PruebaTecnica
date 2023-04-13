@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import { toast } from 'react-toastify';
 
 const BACK_ENDPOINT = "http://localhost:3001"
 
@@ -26,9 +26,15 @@ export const loginUser = (formData) => {
                 type: LOGIN_USER,
                 payload: response.data
             })
-            
+            toast("Iniciaste Sesion con exito" , {
+                position: "top-center",
+                theme: "light",
+                });
         } catch (error) {
-            alert("Invalid Credentials")
+            toast("Usuario y/o Contraseña inválida intente de nuevo." , {
+                position: "top-center",
+                theme: "dark",
+                });
         }
     }
 }
