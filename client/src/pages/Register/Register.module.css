@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+.container > div > input {
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+}
+
+.container > div > input:focus {
+    outline: none;
+    box-shadow: 0 0 5px white;
+}
+
+.container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container > h1 {
+    margin:0
+}

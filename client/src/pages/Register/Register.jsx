@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import style from './Register.module.css';
+import { useDispatch } from 'react-redux';
+import { registerUser } from '../../redux/actions';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
+
+  const dispatch = useDispatch();
+  const nav = useNavigate();
+
   const [formData, setFormData] = useState({
     username: '',
     name: '',
@@ -21,37 +29,39 @@ function Register() {
        formData.name === "" && 
        formData.email === "" && 
        formData.password === ""){
-      toast('All the fields are required', {
+      toast('Todos los campos son requeridos', {
         position: "top-center",
         theme: "dark",
         });
        } else if(formData.username === ""){
-        toast('Username is required', {
+        toast('El nombre de usuario es requerido', {
             position: "top-center",
             theme: "dark",
             });
        } else if(formData.name === ""){
-        toast('Name is required', {
+        toast('El nombre de completo es requerido', {
             position: "top-center",
             theme: "dark",
             });
        } else if(formData.email === ""){
-        toast('Email is required', {
+        toast('El correo electronico es requerido', {
             position: "top-center",
             theme: "dark",
             });
        } else if(formData.password === ""){
-        toast('Password is required', {
+        toast('La contraseña es requerida', {
             position: "top-center",
             theme: "dark",
             });
        } else {
-
+          dispatch(registerUser(formData));
+          nav("/login")
        }
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={style.container}>
+      <h1>Registrate</h1>
       <div>
         <label htmlFor="username">Nombre de Usuario</label>
         <input type="text" name="username" id="username" value={formData.username} onChange={handleInputChange} />

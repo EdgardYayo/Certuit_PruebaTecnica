@@ -17,7 +17,7 @@ function Landing() {
 
   return (
     <div>
-      <h1>Bienvenido al Sitio Web</h1>
+      <h1>Bienvenido a PresupuestApp</h1>
       <button onClick={handleNavigateToRegister}>Registrarse</button>
       <button onClick={handleNavigateToLogin}>Iniciar Sesión</button>
     </div>
