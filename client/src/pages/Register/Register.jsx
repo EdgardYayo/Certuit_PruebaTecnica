@@ -80,6 +80,7 @@ function Register() {
       </div>
       <button type="submit">Registrarse</button>
       <ToastContainer/>
+      <p>¿Ya tienes cuenta?<a href={"/login"}> Inicia Sesion</a></p>
     </form>
   );
 }

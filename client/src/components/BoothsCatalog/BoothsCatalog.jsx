@@ -1,14 +1,15 @@
 import React from 'react'
+import { SiCashapp } from 'react-icons/si'
 
 function BoothsCatalog() {
   return (
     <div>
-        <h3>Catalogo de Casetas</h3>
+        <h3>Catalogo de Casetas <SiCashapp/></h3>
         <table>
             <tr>
                 <td><strong>Casetas</strong></td>
-                <td><strong>Precio Automovil(pesos)</strong></td>
-                <td><strong>Precio Autobus(pesos)</strong></td>
+                <td><strong>Precio Automovil (pesos)</strong></td>
+                <td><strong>Precio Autobus (pesos)</strong></td>
             </tr>
             <tr>
                 <td>La Rumorosa</td>

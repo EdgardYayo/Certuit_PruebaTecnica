@@ -1,9 +1,10 @@
 import React from 'react'
+import { GiHorizonRoad } from 'react-icons/gi'
 
 function RoutesCatalog() {
   return (
     <div>
-        <h3>Catalogo de Rutas</h3>
+        <h3>Catalogo de Rutas <GiHorizonRoad/></h3>
         <table>
             <tr>
                 <td><strong>Ruta</strong></td>

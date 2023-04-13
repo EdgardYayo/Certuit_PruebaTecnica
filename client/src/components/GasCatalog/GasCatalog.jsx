@@ -1,13 +1,14 @@
 import React from 'react'
+import { FaGasPump } from 'react-icons/fa'
 
 function GasCatalog() {
   return (
     <div>
-        <h3>Catalogo de Combustible</h3>
+        <h3>Catalogo de Combustible <FaGasPump/></h3>
         <table>
             <tr>
                 <td><strong>Tipo de Combustible</strong></td>
-                <td><strong>Precio por Litro</strong></td>
+                <td><strong>Precio por Litro (pesos)</strong></td>
             </tr>
             <tr>
                 <td>Gasolina</td>

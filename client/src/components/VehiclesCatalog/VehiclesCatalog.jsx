@@ -1,9 +1,10 @@
 import React from 'react'
+import { FaCarSide } from 'react-icons/fa'
 
 function VehiclesCatalog() {
   return (
     <div>
-        <h3>Catalogo de Vehiculos</h3>
+        <h3>Catalogo de Vehiculos <FaCarSide/></h3>
         <table>
             <tr>
                 <td><strong>Vehiculo</strong></td>

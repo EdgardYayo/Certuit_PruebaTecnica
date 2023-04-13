@@ -60,6 +60,7 @@ function Login() {
       <button type="submit">Iniciar Sesión</button>
       { !Array.isArray(userData) && <button onClick={() => nav("/home")}>Entra ala App</button> }
       <ToastContainer/> 
+      <p>¿No tienes cuenta?<a href={"/register"}> Registrate</a></p>
     </form>
   );
 }

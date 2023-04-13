@@ -8,6 +8,8 @@ import './index.css'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import Home from './pages/Home/Home';
+import Budget from './pages/Budget/Budget';
+import Report from './pages/Report/Report';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
    {
     path: "/home",
     element: <Home/>
+  },
+  {
+    path: "/budget",
+    element: <Budget/>
+  },
+  {
+    path: "/report",
+    element: <Report/>
   },
 
 ])
