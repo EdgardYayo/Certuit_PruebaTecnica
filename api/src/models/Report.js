@@ -55,6 +55,18 @@ module.exports = (sequelize) => {
             allowNull: false
         },
 
+        costOfGas: {
+            type:DataTypes.INTEGER,
+        },
+
+        costOfBooth: {
+            type:DataTypes.INTEGER,
+        },
+
+        costOfPilot: {
+            type:DataTypes.INTEGER,
+        },
+
         total: {
             type:DataTypes.INTEGER,
         }

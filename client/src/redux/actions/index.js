@@ -5,6 +5,8 @@ const BACK_ENDPOINT = "http://localhost:3001"
 
 export const REGISTER_USER = "REGISTER_USER";
 export const LOGIN_USER = "LOGIN_USER";
+export const CREATE_REPORT = "CREATE_REPORT";
+export const GET_REPORT = "GET_REPORT";
 
 
 export const registerUser = (formData) => {
@@ -36,5 +38,27 @@ export const loginUser = (formData) => {
                 theme: "dark",
                 });
         }
+    }
+}
+
+
+export const createReport = (data, userId) => {
+    return async function (dispatch){
+        const response = await axios.post(`${BACK_ENDPOINT}/report/new/${userId}`, data)
+        dispatch({
+            type: CREATE_REPORT,
+            payload: response.data
+        })
+    }
+}
+
+
+export const getReport = (userId) => {
+    return async function (dispatch){
+        const response = await axios.get(`${BACK_ENDPOINT}/report/${userId}`)
+        dispatch({
+            type: GET_REPORT,
+            payload: response.data
+        })
     }
 }

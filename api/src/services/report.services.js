@@ -28,8 +28,14 @@ const createReport = async (typeOfTravel, goRoute, backRoute, dateOfTravel, date
              } 
         });
 
+        newReport.costOfGas = Math.round(gasPerTravel * numberOfVehicles);
+        newReport.save();
+        newReport.costOfBooth = Math.round(tollBoothsPerTravel * numberOfVehicles);
+        newReport.save();
+        newReport.costOfPilot = Math.round(pilotPricePerTravel);
+        newReport.save();
         newReport.total = Math.round((gasPerTravel * numberOfVehicles) + (tollBoothsPerTravel * numberOfVehicles) + pilotPricePerTravel);
-        newReport.save()
+        newReport.save();
 
         user.addReport(newReport);
         return newReport;
@@ -54,6 +60,9 @@ const getReport = async (userId) => {
                 "wayOfTransportation",
                 "numberOfPassengers",
                 "numberOfVehicles",
+                "costOfGas",
+                "costOfBooth",
+                "costOfPilot",
                 "total" ],
                 throught:{
                     attributes: []

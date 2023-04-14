@@ -1,4 +1,4 @@
-import { LOGIN_USER, REGISTER_USER } from "../actions";
+import { CREATE_REPORT, GET_REPORT, LOGIN_USER, REGISTER_USER } from "../actions";
 
 const initialState = {
     user: [],
@@ -15,6 +15,13 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 user: action.payload
             }    
+        case CREATE_REPORT: 
+            return { ...state }
+        case GET_REPORT:
+            return {
+                ...state,
+                reports: action.payload
+            }
         default:
             return{
                 ...state
