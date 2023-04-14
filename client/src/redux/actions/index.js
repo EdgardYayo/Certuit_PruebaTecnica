@@ -7,6 +7,7 @@ export const REGISTER_USER = "REGISTER_USER";
 export const LOGIN_USER = "LOGIN_USER";
 export const CREATE_REPORT = "CREATE_REPORT";
 export const GET_REPORT = "GET_REPORT";
+export const CLEAN_USER_DATA = "CLEAN_USER_DATA";
 
 
 export const registerUser = (formData) => {
@@ -60,5 +61,12 @@ export const getReport = (userId) => {
             type: GET_REPORT,
             payload: response.data
         })
+    }
+}
+
+export const cleanUserData = () => {
+    return {
+        type: CLEAN_USER_DATA,
+        payload: []
     }
 }

@@ -76,7 +76,7 @@ const getReport = async (userId) => {
     }
 }
 
-
+//Funcion que calcula el precio del Combustible
 const gasPrice = (typeOfTravel, goRoute, wayOfTransportation) => {
     if(typeOfTravel === "Una direccion"){
         if(goRoute === "Mexicali, Tecate-Tijuana, Rosarito, Ensenada"){
@@ -184,6 +184,7 @@ const gasPrice = (typeOfTravel, goRoute, wayOfTransportation) => {
 
 }
 
+//Funcion que calcula el precio de las casetas
 const tollBoothsPrice = (typeOfTravel, goRoute, wayOfTransportation) => {
     if(typeOfTravel === "Una direccion"){
         if(goRoute === "Mexicali, Tecate-Tijuana, Rosarito, Ensenada"){
@@ -246,7 +247,7 @@ const tollBoothsPrice = (typeOfTravel, goRoute, wayOfTransportation) => {
     }
 }
 
-
+//Funcion que calcula el concepto de los viaticos
 const pilotPrice = (numberOfVehicles) => {
     let pilotIncomePerDay = 1244.64;
     if(numberOfVehicles > 1){

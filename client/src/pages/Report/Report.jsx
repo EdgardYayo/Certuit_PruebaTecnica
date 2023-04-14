@@ -16,11 +16,11 @@ function Report() {
   }, [])
 
 
-console.log(report);
+//console.log(report.reports);
   return (
     <>
     <section className={style.container}>
-      { report && report.reports?.map((r, i) => (
+      { report.reports?.some((e) => typeof(e) === "object") ? report && report.reports?.map((r, i) => (
       <div key={r.i} className={style.reportContent}>
         <h2>Tu Reporte del Viaje</h2>
         <p><strong>Tipo de Viaje:</strong> {r.typeOfTravel}</p>
@@ -37,7 +37,7 @@ console.log(report);
         <p><strong>Concepto de Viaticos:</strong> ${r.costOfPilot} pesos</p>
         <p><strong>Total: </strong>${r.total} pesos</p>
       </div>
-      ))}
+      )) : <h2>No has generado ningun reporte</h2>}
     </section>
     <button className={style.btn} onClick={() => nav("/home")}>Ver Catalogos</button>
     </>

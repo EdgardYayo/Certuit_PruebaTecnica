@@ -1,4 +1,4 @@
-import { CREATE_REPORT, GET_REPORT, LOGIN_USER, REGISTER_USER } from "../actions";
+import { CLEAN_USER_DATA, CREATE_REPORT, GET_REPORT, LOGIN_USER, REGISTER_USER } from "../actions";
 
 const initialState = {
     user: [],
@@ -21,6 +21,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 reports: action.payload
+            }
+        case CLEAN_USER_DATA:
+            return {
+                ...state,
+                user: action.payload
             }
         default:
             return{

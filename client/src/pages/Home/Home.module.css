@@ -4,3 +4,20 @@
     place-items: center;
     margin-block-end: 4rem;
 }
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+    .catalogs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    
+}
